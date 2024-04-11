@@ -1,6 +1,6 @@
-Feature: Flight Booking
+Feature: Search for Flights
 		@regression
-  	Scenario: Flight booking search for One way
+  	Scenario: User searches for one-way flight
     Given I want to launch the chrome browser
     And I want to load the URL
     When Flight page is displyed
@@ -13,7 +13,7 @@ Feature: Flight Booking
     And Close browser
     
     @sanity
-    Scenario: Flight booking search for Round trip
+    Scenario: User searches for round-trip flight
     Given I want to launch the chrome browser
     And I want to load the URL
     When Flight page is displyed
@@ -26,7 +26,7 @@ Feature: Flight Booking
     And Close browser
     
     @system
-    Scenario: User filters to search results
+    Scenario: User filters search results for specific Airline
     Given I want to launch the chrome browser
     And I want to load the URL
     When Flight page is displyed
