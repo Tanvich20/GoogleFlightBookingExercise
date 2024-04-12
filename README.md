@@ -21,7 +21,8 @@ mvn clean test
 - `pageObject`: Page object class.
 - `testRunner`: Run class.
 - `utilities`: Utility classes for common functionalities-ReadConfig class.
-- `target`: Contains test reports- Reports.html.
+- `target/cucumber-reports`: Contains test reports- Reports.html.
+- `target/screenshots`: Contains screenshots of the failed testcases.
 
 ## Test Scenarios
 - **Search for Flights**
