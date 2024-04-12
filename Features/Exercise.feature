@@ -1,6 +1,6 @@
 Feature: Search for Flights
-		@regression
-  	Scenario: User searches for one-way flight
+    @regression
+    Scenario: User searches for one-way flight
     Given I want to launch the chrome browser
     And I want to load the URL
     When Flight page is displyed
