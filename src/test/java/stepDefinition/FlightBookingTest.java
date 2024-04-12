@@ -1,9 +1,14 @@
 package stepDefinition;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -117,6 +122,18 @@ public class FlightBookingTest extends BaseClass {
 
 	@After
 	public void teardown(Scenario sc) {
+		if (sc.isFailed() == true) {
+			TakesScreenshot scrShot = ((TakesScreenshot) driver);
+			File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+			File DestFile = new File(".\\target\\screenshots\\" + sc.getName() + ".png");
+
+			try {
+				FileUtils.copyFile(SrcFile, DestFile);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		driver.quit();
 	}
 
